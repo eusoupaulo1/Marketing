@@ -1,0 +1,226 @@
+:root {
+  color-scheme: light;
+  --bg: #0b141a;
+  --panel: #111b21;
+  --accent: #25d366;
+  --text: #e9edef;
+  --muted: #8696a0;
+  --bubble-ai: #202c33;
+  --bubble-user: #005c4b;
+  --input: #2a3942;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Inter", system-ui, sans-serif;
+  background: radial-gradient(circle at top, #1f2c34, var(--bg));
+  color: var(--text);
+}
+
+.app-shell {
+  max-width: 1100px;
+  min-height: 90vh;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  border-radius: 1.1rem;
+  overflow: hidden;
+  border: 1px solid #2f3b43;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+}
+
+.sidebar {
+  background: linear-gradient(180deg, #111b21, #0e171c);
+  padding: 1.3rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.brand {
+  display: flex;
+  gap: 0.85rem;
+  align-items: center;
+}
+
+.brand__dot {
+  width: 16px;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--accent);
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.brand p,
+.chat-header p {
+  margin: 0.15rem 0 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.campaign-card,
+.kpi-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 0.85rem;
+  padding: 0.95rem;
+}
+
+h2 {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.campaign-card p {
+  color: #d6dde1;
+  line-height: 1.45;
+  font-size: 0.9rem;
+}
+
+button {
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+#newTipBtn {
+  width: 100%;
+  background: #1f6f59;
+  color: #dcf8c6;
+  border-radius: 0.6rem;
+  padding: 0.65rem;
+  font-weight: 600;
+}
+
+.kpi-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.8rem 0 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.kpi-card li {
+  display: flex;
+  justify-content: space-between;
+  color: #d4dbe0;
+  font-size: 0.9rem;
+}
+
+.chat-area {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='%2318292f' fill-opacity='0.6'%3E%3Ccircle cx='12' cy='12' r='4'/%3E%3Ccircle cx='60' cy='60' r='3'/%3E%3Ccircle cx='108' cy='20' r='3'/%3E%3Ccircle cx='90' cy='102' r='4'/%3E%3C/g%3E%3C/svg%3E"),
+    #0b141a;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 1.1rem;
+  border-bottom: 1px solid #203038;
+  background: rgba(17, 27, 33, 0.85);
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  color: #002f24;
+  background: linear-gradient(160deg, #7effbe, #25d366);
+}
+
+.chat-header h2 {
+  margin: 0;
+}
+
+.chat-messages {
+  padding: 1.2rem;
+  overflow: auto;
+  display: grid;
+  gap: 0.8rem;
+  align-content: start;
+}
+
+.message {
+  max-width: min(74%, 560px);
+  padding: 0.75rem 0.85rem;
+  border-radius: 0.85rem;
+  line-height: 1.4;
+}
+
+.message p {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.message time {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.73rem;
+  color: #9eb1bb;
+  text-align: right;
+}
+
+.message--ai {
+  background: var(--bubble-ai);
+  border-top-left-radius: 0.25rem;
+}
+
+.message--user {
+  margin-left: auto;
+  background: var(--bubble-user);
+  border-top-right-radius: 0.25rem;
+}
+
+.chat-input {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.7rem;
+  padding: 0.9rem;
+  border-top: 1px solid #203038;
+  background: rgba(17, 27, 33, 0.93);
+}
+
+.chat-input input {
+  border: 0;
+  border-radius: 999px;
+  background: var(--input);
+  color: var(--text);
+  padding: 0.78rem 1rem;
+  font: inherit;
+}
+
+.chat-input button {
+  padding: 0 1.1rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #003b2e;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .app-shell {
+    margin: 0;
+    min-height: 100vh;
+    border-radius: 0;
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    display: none;
+  }
+}

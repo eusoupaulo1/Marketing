@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZapMarketing IA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="sidebar">
+        <header class="brand">
+          <div class="brand__dot"></div>
+          <div>
+            <h1>ZapMarketing IA</h1>
+            <p>Assistente para crescer seu negócio</p>
+          </div>
+        </header>
+
+        <section class="campaign-card">
+          <h2>Campanha da Semana</h2>
+          <p id="campaignTip">
+            Sugestão: publique um Reels com depoimento real de cliente + CTA para WhatsApp.
+          </p>
+          <button id="newTipBtn" type="button">Gerar nova ideia</button>
+        </section>
+
+        <section class="kpi-card">
+          <h2>KPIs rápidos</h2>
+          <ul>
+            <li><span>Leads hoje</span><strong id="kpiLeads">26</strong></li>
+            <li><span>Taxa de resposta</span><strong id="kpiReply">82%</strong></li>
+            <li><span>Conversões</span><strong id="kpiSales">9</strong></li>
+          </ul>
+        </section>
+      </aside>
+
+      <section class="chat-area">
+        <header class="chat-header">
+          <div class="avatar">IA</div>
+          <div>
+            <h2>Mentora de Marketing</h2>
+            <p>Online · pronta para sugerir ações</p>
+          </div>
+        </header>
+
+        <div id="chatMessages" class="chat-messages" aria-live="polite"></div>
+
+        <form id="chatForm" class="chat-input" autocomplete="off">
+          <input
+            id="messageInput"
+            name="message"
+            type="text"
+            placeholder="Ex: Crie uma campanha para vender mais no Dia das Mães"
+            required
+          />
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
+    </main>
+
+    <template id="messageTemplate">
+      <article class="message">
+        <p></p>
+        <time></time>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
